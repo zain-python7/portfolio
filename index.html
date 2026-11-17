@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Zain ul Abideen · Flutter &amp; Web Developer · Video Editor</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%237c3aed'/%3E%3Cstop%20offset='1'%20stop-color='%232563eb'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='64'%20height='64'%20rx='16'%20fill='url(%23g)'/%3E%3Cpath%20d='M18%2018h28v7L27%2041h19v7H18v-7l19-16H18z'%20fill='white'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#7c3aed">
 <style>
 :root{--bg:#07070d;--bg2:#0e0e1a;--card:rgba(255,255,255,.05);--bd:rgba(255,255,255,.1);--tx:#f3f3f8;--mut:#a3a3b8;--a:#8b5cf6;--b:#22d3ee;--c:#f472b6;--hl:#38bdf8;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media (prefers-color-scheme:light){:root{--bg:#f7f7fb;--bg2:#ececf6;--card:rgba(255,255,255,.8);--bd:rgba(0,0,0,.1);--tx:#14141f;--mut:#4b4b60;--hl:#6d28d9;color-scheme:light}}
@@ -92,6 +94,33 @@ h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:8px}
 .cform .alt{margin-top:16px;color:var(--mut);font-size:.9rem}
 .cform .alt a{color:var(--hl)}
 @media(max-width:760px){.cgrid{grid-template-columns:1fr}}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;column-gap:30px;align-items:center}
+.hl{display:flex;flex-direction:column;min-width:0;position:relative;z-index:2}
+.stage{perspective:1200px;height:580px;display:flex;align-items:center;justify-content:center;overflow:hidden;min-width:0;position:relative;z-index:0}
+.scene{position:relative;top:40px;width:350px;height:440px;transform-style:preserve-3d;transform:scale(var(--s,1)) rotateX(8deg) rotateY(-18deg);transition:transform .2s ease-out}
+.ph{position:absolute;width:170px;height:360px;border-radius:28px;border:4px solid #1b1b2b;background-size:cover;background-position:top;box-shadow:0 40px 60px rgba(0,0,0,.45);animation:fy 6s ease-in-out infinite}
+.p1{left:0;top:50px;transform:translateZ(0) rotateY(12deg)}
+.p2{left:90px;top:0;transform:translateZ(90px);animation-delay:-2s}
+.p3{left:180px;top:56px;transform:translateZ(20px) rotateY(-12deg);animation-delay:-4s}
+@keyframes fy{0%,100%{translate:0 0}50%{translate:0 -16px}}
+.orb{position:absolute;border-radius:50%;animation:fy 5s ease-in-out infinite}
+.o1{width:92px;height:92px;right:-18px;top:-14px;transform:translateZ(150px);background:radial-gradient(circle at 30% 28%,#fff,#a78bfa 38%,#4c1d95 75%);box-shadow:0 24px 40px rgba(76,29,149,.5)}
+.o2{width:56px;height:56px;left:-10px;bottom:20px;transform:translateZ(120px);animation-delay:-3s;background:radial-gradient(circle at 30% 28%,#fff,#f472b6 40%,#9d174d 78%);box-shadow:0 18px 30px rgba(157,23,77,.5)}
+.btn.p{box-shadow:0 5px 0 #4c1d95,0 12px 24px rgba(124,58,237,.4)}
+.btn.p:hover{box-shadow:0 8px 0 #4c1d95,0 18px 30px rgba(124,58,237,.45)}
+.btn.p:active{transform:translateY(4px);box-shadow:0 1px 0 #4c1d95}
+.proj,.card,.cc,.cform{box-shadow:0 18px 40px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.08)}
+@media(max-width:900px){.hero{grid-template-columns:1fr;min-height:auto}.stage{height:520px;margin-top:10px}.scene{--s:.8}.cubebox{display:none}}
+.sechd{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.cubebox{perspective:700px;width:120px;height:120px;margin:0 40px 30px 0;flex:none}
+.cube{width:100%;height:100%;position:relative;transform-style:preserve-3d;animation:spin 14s linear infinite}
+.cube div{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:2.1rem;color:#fff;border:1px solid rgba(255,255,255,.35);background:linear-gradient(135deg,rgba(124,58,237,.9),rgba(37,99,235,.9))}
+.cube small{font-size:.75rem;font-weight:700}
+.f1{transform:translateZ(60px)}.f2{transform:rotateY(180deg) translateZ(60px)}.f3{transform:rotateY(90deg) translateZ(60px)}.f4{transform:rotateY(-90deg) translateZ(60px)}.f5{transform:rotateX(90deg) translateZ(60px)}.f6{transform:rotateX(-90deg) translateZ(60px)}
+@keyframes spin{from{transform:rotateX(-22deg) rotateY(0)}to{transform:rotateX(-22deg) rotateY(360deg)}}
+.sk i{box-shadow:0 5px 0 rgba(0,0,0,.35),0 10px 16px rgba(0,0,0,.3)}
+nav div a{box-shadow:0 3px 0 rgba(0,0,0,.25)}
+.vc{box-shadow:0 16px 30px rgba(0,0,0,.4)}
 footer{text-align:center;padding:30px;color:var(--mut);font-size:.85rem}
 .rv{opacity:0;transform:translateY(30px);transition:.8s}
 .rv.in{opacity:1;transform:none}
@@ -103,11 +132,14 @@ footer{text-align:center;padding:30px;color:var(--mut);font-size:.85rem}
 <nav><b class="grad">Zain.</b><div><a href="#work">Work</a><a href="#skills">Skills</a><a href="#video">Video</a><a class="cta" href="#contact">Hire Me</a></div></nav>
 
 <section class="hero">
+<div class="hl">
 <span class="tag">● Available for freelance work</span>
 <h1>I build apps, websites<br>&amp; <span class="grad">stories that move.</span></h1>
 <p>Flutter and web developer with a video editor’s eye. I design and ship complete products, from a clean interface to a working multi-role system.</p>
 <div class="btns"><a class="btn p" href="#work">View My Work</a><a class="btn" href="#contact">Hire Me</a></div>
 <div class="stats"><div><b class="grad">3</b><span>Flutter apps shipped</span></div><div><b class="grad">4</b><span>User roles in one app</span></div><div><b class="grad">3-in-1</b><span>Dev · Design · Video</span></div></div>
+</div>
+<div class="stage" id="stage"><div class="scene" id="scene"><div class="ph p1" id="ph1"></div><div class="ph p2" id="ph2"></div><div class="ph p3" id="ph3"></div><div class="orb o1"></div><div class="orb o2"></div></div></div>
 </section>
 
 <section id="work">
@@ -116,7 +148,8 @@ footer{text-align:center;padding:30px;color:var(--mut);font-size:.85rem}
 </section>
 
 <section id="skills">
-<h2 class="rv">What I Do</h2><p class="sub rv">Everything you need to launch and promote a product.</p>
+<div class="sechd"><div><h2 class="rv">What I Do</h2><p class="sub rv">Everything you need to launch and promote a product.</p></div>
+<div class="cubebox"><div class="cube"><div class="f1">📱<small>Flutter</small></div><div class="f2">🌐<small>Web</small></div><div class="f3">🎬<small>Video</small></div><div class="f4">🎨<small>Design</small></div><div class="f5">💾<small>SQL</small></div><div class="f6">⚡<small>JavaScript</small></div></div></div></div>
 <div class="vwrap" style="margin-bottom:40px"><div class="vtrack st" id="stTrack"></div></div>
 <div class="grid">
 <div class="card rv"><div class="ic">📱</div><h3>Flutter Apps</h3><p>Cross-platform mobile apps with clean UI, smooth navigation and real features like carts, orders and role-based access.</p></div>
@@ -202,6 +235,15 @@ document.getElementById("stTrack").innerHTML=sh;
 function cMsg(){var n=document.getElementById("cn").value.trim(),m=document.getElementById("cm").value.trim();return{n:n,t:"Hi Zain, "+(n?"I’m "+n+". ":"")+(m||"I’d like to talk about a project.")};}
 document.getElementById("cw").onclick=function(){window.open("https://wa.me/923236942494?text="+encodeURIComponent(cMsg().t),"_blank","noopener");};
 document.getElementById("ce").onclick=function(){var c=cMsg();window.open("https://mail.google.com/mail/?view=cm&fs=1&to=zainsaqlain16@gmail.com&su="+encodeURIComponent("Project inquiry"+(c.n?" from "+c.n:""))+"&body="+encodeURIComponent(c.t),"_blank","noopener");};
+document.getElementById("ph1").style.backgroundImage="url("+IMG.z[0]+")";
+document.getElementById("ph2").style.backgroundImage="url("+IMG.f[0]+")";
+document.getElementById("ph3").style.backgroundImage="url("+IMG.s[0]+")";
+var st=document.getElementById("stage"),sc=document.getElementById("scene");
+st.addEventListener("pointermove",function(e){var r=st.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;sc.style.transform="scale(var(--s,1)) rotateX("+(8-y*22)+"deg) rotateY("+(-18+x*44)+"deg)";});
+st.addEventListener("pointerleave",function(){sc.style.transform="";});
+document.querySelectorAll(".card,.cc,.proj").forEach(function(el){var a=el.classList.contains("proj")?3:9;
+el.addEventListener("pointermove",function(e){var r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.transition="transform .1s";el.style.transform="perspective(900px) rotateX("+(-y*a)+"deg) rotateY("+(x*a)+"deg) translateY(-4px)";});
+el.addEventListener("pointerleave",function(){el.style.transition="transform .4s";el.style.transform="";});});
 var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add("in")})},{threshold:.12});
 document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
 </script>
